@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiuair.cloud.oatools.mapper.flieSaveMapper" >
+
+    <select id="fileDetail" resultType="docDetailContent">
+
+       select t.* from ods_oa_imagefile t
+        left join
+        ods_oa_docimagefile f
+        on f.imagefileid=t.imagefileid
+        left join
+        ods_oa_docdetail d
+        on d.id=f.docid
+        where d.doclastmoddate=current_date and
+        d.doclastmoddate is not null;
+
+    </select>
+</mapper>
