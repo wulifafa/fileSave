@@ -33,10 +33,9 @@ public class FilesaveService {
      * 通过url 下载文件到指定路径
      * @throws Exception
      */
-    public void file() throws Exception {
+    public void file(String place) throws Exception {
         String fileurl=null;
         for (int i = 0; i <flieSaveMapper.fileDetail().size(); i++) {
-            String place="D:/tmp/oa";
             fileurl=flieSaveMapper.fileDetail().get(i).getFILEREALPATH()
                     .replace("/oa/weaver/ecology",""); //url
             String filename= fileurl.substring(fileurl.lastIndexOf("/")).replace(".zip","");

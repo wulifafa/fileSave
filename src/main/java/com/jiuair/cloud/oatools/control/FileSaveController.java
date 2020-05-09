@@ -39,7 +39,7 @@ public class FileSaveController {
 
     @GetMapping("/getFile")
     public String setFile() throws Exception {
-        filesaveService.file();
+        filesaveService.file("D:/tmp/oa");
         return "ok";
     }
 
